@@ -534,5 +534,8 @@ document.querySelectorAll("[data-feat]").forEach(b=>b.onclick=()=>{const p=b.dat
 if("IntersectionObserver" in window){const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add("in")}),{threshold:.12});document.querySelectorAll(".reveal").forEach(el=>io.observe(el))}else{document.querySelectorAll(".reveal").forEach(el=>el.classList.add("in"))}
 if("serviceWorker" in navigator){navigator.serviceWorker.register("sw.js").catch(()=>{})}
 </script>
+<!-- shahino-visitor-counter -->
+<div id="shahino-vc" style="text-align:center;margin:22px auto 100px;font-family:inherit"><span style="display:inline-flex;align-items:center;gap:8px;padding:9px 20px;border-radius:999px;border:1.5px solid rgba(128,128,128,.45);background:rgba(128,128,128,.12);font-weight:700;font-size:15px">👁 عدد الزوار: <b id="shahino-vc-num">…</b></span></div>
+<script>(function(){if(location.protocol.indexOf('http')!==0)return;var K='shahino-vc-the-chef',c=false;try{c=localStorage.getItem(K)==='1'}catch(e){}function hide(){var el=document.getElementById('shahino-vc');if(el)el.style.display='none'}fetch('https://countapi.mileshilliard.com/api/v1/'+(c?'get':'hit')+'/shahino-apps-2026-the-chef').then(function(r){return r.json()}).then(function(d){if(d&&typeof d.value==='number'){document.getElementById('shahino-vc-num').textContent=d.value.toLocaleString('en-US');try{localStorage.setItem(K,'1')}catch(e){}}else hide()}).catch(hide)})();</script>
 </body>
 </html>
